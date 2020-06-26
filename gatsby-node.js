@@ -23,8 +23,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const content = await graphql(`
     {
-      posts: allMardownRemark(
-        filter: { frontmatter: { type: { eq: "posts" } } }
+      posts: allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "post" } } }
       ) {
         edges {
           node {
@@ -37,6 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+
       pages: allMarkdownRemark(
         filter: { frontmatter: { type: { eq: "page" } } }
       ) {
@@ -50,8 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-
-  // do nothing more if errror
+  //do nothing more if error
   if (content.error) return
 
   const allPosts = content.data.posts.edges
@@ -71,13 +71,13 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-  // create the individual page
+  //create the individual pages
   allPages.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/Page.js`),
       context: {
-        // data passed to context is avilable in page queries as GraphQL variables
+        // data passed to context is available in page queries as GraphQL variables
         slug: node.fields.slug,
       },
     })

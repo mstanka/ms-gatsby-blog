@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
-import MuliRegular from 'fonts/Muli-Regular.woff'
-import MuliBlack from 'fonts/Muli-Black.woff'
+import { createGlobalStyle } from "styled-components"
+import MuliRegular from "fonts/Muli-Regular.woff"
+import MuliBlack from "fonts/Muli-Black.woff"
 
 export const colors = {
   white: "#fff",
@@ -38,16 +38,16 @@ export const GlobalStyles = createGlobalStyle`
 
   @font-face {
     font-family: 'Muli Regular';
-    src: local('Muli Regular'), local('MuliRegular),
-        url(${MuliRegular}) format('woff');
+    src: local('Muli Regular'), local('MuliRegular'),
+      url(${MuliRegular}) format('woff');
     font-weight: 300;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Muli Black';
-    src: local('Muli Black'), local('MuliBlack),
-        url(${MuliBlack}) format('woff');
+    src: local('Muli Black'), local('MuliBlack'),
+      url(${MuliBlack}) format('woff');
     font-weight: 300;
     font-style: normal;
   }
@@ -70,11 +70,11 @@ export const GlobalStyles = createGlobalStyle`
     color: ${props => props.theme.colors.textMain};
     font-family: "Muli Black", Arial, Helvetica, sans-serif;
     transition: all 0.5s ease;
-    letter-spacing: 1px;    
+    letter-spacing: 1px;
   }
 
   p {
-    font-size" 0.9rem;
+    font-size: 0.9rem;
     line-height: 1.2;
 
     @media screen and (min-width: 768px) {
@@ -93,11 +93,11 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  h2 {
+  h3 {
     font-size: 0.8rem;
     letter-spacing: 1.5px;
     margin: 30px 0 -15px 0;
-   
+
     @media screen and (min-width: 768px) {
       font-size: 1.2rem;
     }
