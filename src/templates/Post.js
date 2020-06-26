@@ -21,12 +21,10 @@ const Post = ({ data }) => {
 }
 
 export default Post
-
 // ! means that it cannot be null, we must specify it
 export const query = graphql`
-  query($slug: String!) {  
-    markdownRemark(fields: { slug: { eq: $slug } 
-    }) {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
