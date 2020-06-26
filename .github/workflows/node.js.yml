@@ -31,5 +31,5 @@ jobs:
       uses: fixpoint/azblob-upload-artifact@v4
       with:
         connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-        path: public/
+        path: public
         container: $web
