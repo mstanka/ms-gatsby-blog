@@ -9,7 +9,7 @@ const ModeButton = ({ darkMode, setDarkMode }) => (
   <ImgButton
   src={darkMode ? NightIcon : DayIcon}
   alt="mode"
-  onclick={() => setDarkMode(prev => !prev)}
+  onClick={() => setDarkMode(prev => !prev)}
   />
 )
 
